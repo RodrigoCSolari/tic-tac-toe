@@ -99,7 +99,12 @@ export function ActiveGame({
   });
 
   useEffect(() => {
-    if (data && !data.active_game && activeGameParams.game_id) {
+    if (
+      data &&
+      !data.active_game &&
+      activeGameParams.game_id &&
+      walletSelector.accountId
+    ) {
       setLoadingFinalizedGame(true);
       walletSelector.ticTacToeLogic
         ?.getLastGames()

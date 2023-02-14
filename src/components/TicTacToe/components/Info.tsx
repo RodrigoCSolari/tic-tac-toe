@@ -56,14 +56,13 @@ export default function Info({
         allowToggle
         mb="30px"
       >
-        {activeGameParams.game_id && (
+        {activeGameParams.game_id ? (
           <ActiveGame
             data={data}
             activeGameParams={activeGameParams}
             setActiveGameParams={setActiveGameParams}
           />
-        )}
-        {!data?.active_game && (
+        ) : (
           <WaitingList
             showingActiveGame={activeGameParams.game_id !== null}
             showingWaitingListForm={

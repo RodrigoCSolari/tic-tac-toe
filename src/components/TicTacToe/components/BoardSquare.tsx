@@ -69,7 +69,8 @@ export function BoardSquare({
     if (
       tiles &&
       tiles[row][column] !== activeGameParams.board[row][column] &&
-      currentPlayer
+      currentPlayer &&
+      walletSelector.accountId
     ) {
       setActiveGameParams((prev) => {
         return {
