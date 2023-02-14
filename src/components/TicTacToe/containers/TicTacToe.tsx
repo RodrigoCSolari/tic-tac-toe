@@ -84,6 +84,9 @@ export function TicTacToe() {
         player2: data.active_game[1].player2,
       });
     }
+    if (!walletSelector.accountId) {
+      setActiveGameParams(initialActiveGameParamsState);
+    }
   }, [activeGameParams.game_id, data?.active_game, walletSelector.accountId]);
 
   useEffect(() => {
